@@ -1,5 +1,6 @@
 package fleek.code.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -24,7 +25,7 @@ public class ThemedActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        final MaterialToolbar materialToolbar = /*findViewById(R.id.toolbar);*/null;
+        final MaterialToolbar materialToolbar = findViewById(R.id.toolbar);
 
         if (materialToolbar != null) {
             materialToolbar.setNavigationIcon(R.drawable.ic_back);

@@ -3,17 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/itemProjects"
+        android:id="@id/projectsFragment"
         android:icon="@drawable/ic_folder"
         android:title="@string/mainActivityBottomMenuProjects"
         app:showAsAction="always" />
     <item
-        android:id="@+id/itemTools"
+        android:id="@id/toolsFragment"
         android:icon="@drawable/ic_build"
         android:title="@string/mainActivityBottomMenuTools"
         app:showAsAction="always" />
     <item
-        android:id="@+id/itemSettings"
+        android:id="@id/settingsFragment"
         android:icon="@drawable/ic_settings"
         android:title="@string/mainActivityBottomMenuSettings"
         app:showAsAction="always" />

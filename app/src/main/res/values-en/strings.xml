@@ -4,4 +4,5 @@
     <string name="mainActivityBottomMenuProjects">Projects</string>
     <string name="mainActivityBottomMenuTools">Tools</string>
     <string name="mainActivityBottomMenuSettings">Settings</string>
+    <string name="projectsFragmentTitle">Your projects</string>
 </resources>

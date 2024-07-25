@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigationBottom"
+    app:startDestination="@id/projectsFragment">
+    <fragment
+        android:id="@+id/projectsFragment"
+        android:name="fleek.code.fragments.navigation.ProjectsFragment"
+        android:label="ProjectsFragment" />
+
+    <fragment
+        android:id="@+id/toolsFragment"
+        android:name="fleek.code.fragments.navigation.ToolsFragment"
+        android:label="ToolsFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="fleek.code.fragments.navigation.SettingsFragment"
+        android:label="SettingsFragment" />
+</navigation>
