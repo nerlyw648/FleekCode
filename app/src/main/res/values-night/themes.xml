@@ -1,0 +1,54 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Felsty" parent="Theme">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
+        <item name="android:navigationBarColor">@color/colorBackgroundDark</item>
+
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/colorOnPrimaryDark</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryContainerDark</item>
+        <item name="colorOnPrimaryContainer">@color/colorOnPrimaryContainerDark</item>
+        <item name="colorSecondary">@color/colorSecondaryDark</item>
+        <item name="colorOnSecondary">@color/colorOnSecondaryDark</item>
+        <item name="colorSecondaryContainer">@color/colorSecondaryContainerDark</item>
+        <item name="colorOnSecondaryContainer">@color/colorOnSecondaryContainerDark</item>
+        <item name="colorTertiary">@color/colorTertiaryDark</item>
+        <item name="colorOnTertiary">@color/colorOnTertiaryDark</item>
+        <item name="colorTertiaryContainer">@color/colorTertiaryContainerDark</item>
+        <item name="colorOnTertiaryContainer">@color/colorOnTertiaryContainerDark</item>
+        <item name="colorError">@color/colorErrorDark</item>
+        <item name="colorOnError">@color/colorOnErrorDark</item>
+        <item name="colorErrorContainer">@color/colorErrorContainerDark</item>
+        <item name="colorOnErrorContainer">@color/colorOnErrorContainerDark</item>
+        <item name="android:colorBackground">@color/colorBackgroundDark</item>
+        <item name="colorOnBackground">@color/colorOnBackgroundDark</item>
+        <item name="colorSurface">@color/colorSurfaceDark</item>
+        <item name="colorOnSurface">@color/colorOnSurfaceDark</item>
+        <item name="colorSurfaceVariant">@color/colorSurfaceVariantDark</item>
+        <item name="colorOnSurfaceVariant">@color/colorOnSurfaceVariantDark</item>
+        <item name="colorOutline">@color/colorOutlineDark</item>
+        <item name="colorOutlineVariant">@color/colorOutlineVariantDark</item>
+        <item name="colorSurfaceInverse">@color/colorInverseSurfaceDark</item>
+        <item name="colorOnSurfaceInverse">@color/colorInverseOnSurfaceDark</item>
+        <item name="colorPrimaryInverse">@color/colorInversePrimaryDark</item>
+        <item name="colorPrimaryFixed">@color/colorPrimaryFixedDark</item>
+        <item name="colorOnPrimaryFixed">@color/colorOnPrimaryFixedDark</item>
+        <item name="colorPrimaryFixedDim">@color/colorPrimaryFixedDimDark</item>
+        <item name="colorOnPrimaryFixedVariant">@color/colorOnPrimaryFixedVariantDark</item>
+        <item name="colorSecondaryFixed">@color/colorSecondaryFixedDark</item>
+        <item name="colorOnSecondaryFixed">@color/colorOnSecondaryFixedDark</item>
+        <item name="colorSecondaryFixedDim">@color/colorSecondaryFixedDimDark</item>
+        <item name="colorOnSecondaryFixedVariant">@color/colorOnSecondaryFixedVariantDark</item>
+        <item name="colorTertiaryFixed">@color/colorTertiaryFixedDark</item>
+        <item name="colorOnTertiaryFixed">@color/colorOnTertiaryFixedDark</item>
+        <item name="colorTertiaryFixedDim">@color/colorTertiaryFixedDimDark</item>
+        <item name="colorOnTertiaryFixedVariant">@color/colorOnTertiaryFixedVariantDark</item>
+        <item name="colorSurfaceDim">@color/colorSurfaceDimDark</item>
+        <item name="colorSurfaceBright">@color/colorSurfaceBrightDark</item>
+        <item name="colorSurfaceContainerLowest">@color/colorSurfaceContainerLowestDark</item>
+        <item name="colorSurfaceContainerLow">@color/colorSurfaceContainerLowDark</item>
+        <item name="colorSurfaceContainer">@color/colorSurfaceContainerDark</item>
+        <item name="colorSurfaceContainerHigh">@color/colorSurfaceContainerHighDark</item>
+        <item name="colorSurfaceContainerHighest">@color/colorSurfaceContainerHighestDark</item>
+    </style>
+</resources>

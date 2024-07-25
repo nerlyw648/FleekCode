@@ -1,0 +1,86 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <item name="textInputStyle">@style/textInput</item>
+        <item name="materialButtonStyle">@style/button</item>
+    </style>
+
+    <style name="Base.Theme.Felsty" parent="Theme">
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:navigationBarColor">@color/colorBackgroundLight</item>
+
+        <item name="colorPrimary">@color/colorPrimaryLight</item>
+        <item name="colorOnPrimary">@color/colorOnPrimaryLight</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryContainerLight</item>
+        <item name="colorOnPrimaryContainer">@color/colorOnPrimaryContainerLight</item>
+        <item name="colorSecondary">@color/colorSecondaryLight</item>
+        <item name="colorOnSecondary">@color/colorOnSecondaryLight</item>
+        <item name="colorSecondaryContainer">@color/colorSecondaryContainerLight</item>
+        <item name="colorOnSecondaryContainer">@color/colorOnSecondaryContainerLight</item>
+        <item name="colorTertiary">@color/colorTertiaryLight</item>
+        <item name="colorOnTertiary">@color/colorOnTertiaryLight</item>
+        <item name="colorTertiaryContainer">@color/colorTertiaryContainerLight</item>
+        <item name="colorOnTertiaryContainer">@color/colorOnTertiaryContainerLight</item>
+        <item name="colorError">@color/colorErrorLight</item>
+        <item name="colorOnError">@color/colorOnErrorLight</item>
+        <item name="colorErrorContainer">@color/colorErrorContainerLight</item>
+        <item name="colorOnErrorContainer">@color/colorOnErrorContainerLight</item>
+        <item name="android:colorBackground">@color/colorBackgroundLight</item>
+        <item name="colorOnBackground">@color/colorOnBackgroundLight</item>
+        <item name="colorSurface">@color/colorSurfaceLight</item>
+        <item name="colorOnSurface">@color/colorOnSurfaceLight</item>
+        <item name="colorSurfaceVariant">@color/colorSurfaceVariantLight</item>
+        <item name="colorOnSurfaceVariant">@color/colorOnSurfaceVariantLight</item>
+        <item name="colorOutline">@color/colorOutlineLight</item>
+        <item name="colorOutlineVariant">@color/colorOutlineVariantLight</item>
+        <item name="colorSurfaceInverse">@color/colorInverseSurfaceLight</item>
+        <item name="colorOnSurfaceInverse">@color/colorInverseOnSurfaceLight</item>
+        <item name="colorPrimaryInverse">@color/colorInversePrimaryLight</item>
+        <item name="colorPrimaryFixed">@color/colorPrimaryFixedLight</item>
+        <item name="colorOnPrimaryFixed">@color/colorOnPrimaryFixedLight</item>
+        <item name="colorPrimaryFixedDim">@color/colorPrimaryFixedDimLight</item>
+        <item name="colorOnPrimaryFixedVariant">@color/colorOnPrimaryFixedVariantLight</item>
+        <item name="colorSecondaryFixed">@color/colorSecondaryFixedLight</item>
+        <item name="colorOnSecondaryFixed">@color/colorOnSecondaryFixedLight</item>
+        <item name="colorSecondaryFixedDim">@color/colorSecondaryFixedDimLight</item>
+        <item name="colorOnSecondaryFixedVariant">@color/colorOnSecondaryFixedVariantLight</item>
+        <item name="colorTertiaryFixed">@color/colorTertiaryFixedLight</item>
+        <item name="colorOnTertiaryFixed">@color/colorOnTertiaryFixedLight</item>
+        <item name="colorTertiaryFixedDim">@color/colorTertiaryFixedDimLight</item>
+        <item name="colorOnTertiaryFixedVariant">@color/colorOnTertiaryFixedVariantLight</item>
+        <item name="colorSurfaceDim">@color/colorSurfaceDimLight</item>
+        <item name="colorSurfaceBright">@color/colorSurfaceBrightLight</item>
+        <item name="colorSurfaceContainerLowest">@color/colorSurfaceContainerLowestLight</item>
+        <item name="colorSurfaceContainerLow">@color/colorSurfaceContainerLowLight</item>
+        <item name="colorSurfaceContainer">@color/colorSurfaceContainerLight</item>
+        <item name="colorSurfaceContainerHigh">@color/colorSurfaceContainerHighLight</item>
+        <item name="colorSurfaceContainerHighest">@color/colorSurfaceContainerHighestLight</item>
+    </style>
+
+    <style name="Theme.Felsty" parent="Base.Theme.Felsty" />
+
+    <style name="button" parent="Widget.Material3.Button">
+        <item name="cornerRadius">14dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="editText" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:drawablePadding">-7.5dp</item>
+    </style>
+
+    <style name="textInputOverlay">
+        <item name="editTextStyle">@style/editText</item>
+    </style>
+
+    <style name="textInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="singleLine">true</item>
+        <item name="expandedHintEnabled">false</item>
+        <item name="materialThemeOverlay">@style/textInputOverlay</item>
+    </style>
+</resources>

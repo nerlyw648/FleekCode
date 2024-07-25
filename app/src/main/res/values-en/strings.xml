@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appName">FleekCode</string>
+    <string name="mainActivityBottomMenuProjects">Projects</string>
+    <string name="mainActivityBottomMenuTools">Tools</string>
+    <string name="mainActivityBottomMenuSettings">Settings</string>
+</resources>
