@@ -49,27 +49,33 @@ public class MainActivity extends ThemedActivity {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE);
     }
 
+    public void sendRequestPermissionDialog(String ...permissions) {
+        ModalDialog.create()
+                .setIcon(R.drawable.ic_folder)
+                .setTitle(getString(R.string.permissionStorageTitle))
+                .setText(getString(R.string.permissionStorageText))
+                .setButtons(ObjectMap.of(
+                        getString(R.string.permissionStorageButton), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                                if (permissions[0].equals(Manifest.permission.MANAGE_EXTERNAL_STORAGE)) {
+                                    startActivity(new Intent(
+                                            Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION,
+                                            Uri.parse("package:" + getPackageName())));
+                                } else PermissionManager.requestPermission(MainActivity.this, permissions);
+                            }
+                        }))
+                .show(this);
+    }
+
     @Override
     public void onRequestPermissionDialog(String ...permissions) {
         super.onRequestPermissionDialog(permissions);
         if (permissions[0].equals(Manifest.permission.MANAGE_EXTERNAL_STORAGE)) {
             if (Utils.getCurrentSdkVersion() >= 30 && !Environment.isExternalStorageManager()) {
-                ModalDialog.create()
-                        .setIcon(R.drawable.ic_folder)
-                        .setTitle(getString(R.string.permissionStorageTitle))
-                        .setText(getString(R.string.permissionStorageText))
-                        .setButtons(ObjectMap.of(
-                                getString(R.string.permissionStorageButton), new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        dialogInterface.dismiss();
-                                        startActivity(new Intent(
-                                                Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION,
-                                                Uri.parse("package:" + getPackageName())));
-                                    }
-                                }))
-                        .show(this);
+                sendRequestPermissionDialog(permissions);
             }
-        }
+        } else sendRequestPermissionDialog(permissions);
     }
 }

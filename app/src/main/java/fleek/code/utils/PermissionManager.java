@@ -21,7 +21,10 @@ public class PermissionManager {
         } else if (ActivityCompat.shouldShowRequestPermissionRationale(
                 context, permissions[0])) {
             context.onRequestPermissionDialog(permissions);
-        } else requestPermissions(context, permissions,
-                1);
+        } else requestPermission(context, permissions);
+    }
+
+    public static void requestPermission(ThemedActivity context, String ...permissions) {
+        context.requestPermissions(permissions, 1);
     }
 }
