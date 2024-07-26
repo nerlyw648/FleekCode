@@ -64,7 +64,16 @@
         <item name="android:textAppearance">@style/textStyle</item>
 
         <item name="toolbarStyle">@style/toolbarStyle</item>
+        <item name="materialAlertDialogTheme">@style/materialDialogTheme</item>
+        <item name="alertDialogTheme">@style/materialDialogTheme</item>
+        <item name="android:alertDialogTheme">@style/materialDialogTheme</item>
     </style>
+
+    <style name="Preference.SwitchPreferenceCompat" parent="Preference.SwitchPreferenceCompat.Material">
+        <item name="widgetLayout">@layout/material_switch</item>
+    </style>
+
+
 
     <style name="toolbarStyle" parent="Widget.Material3.Toolbar">
         <item name="titleTextAppearance">@style/toolbarTitleStyle</item>
@@ -82,9 +91,19 @@
 
     </style>
 
-    <style name="dialogStyle" parent="MaterialAlertDialog.Material3">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsFloating">true</item>
+    <style name="materialDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog.Centered">
+        <item name="backgroundTint">?attr/colorSurface</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/materialDialogTitleStyle</item>
+        <item name="materialAlertDialogTitleIconStyle">@style/materialDialogTitleIconStyle</item>
+    </style>
+
+    <style name="materialDialogTitleStyle" parent="MaterialAlertDialog.Material3.Title.Text.CenterStacked">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="materialDialogTitleIconStyle" parent="MaterialAlertDialog.Material3.Title.Icon.CenterStacked">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
     </style>
 
     <style name="bottomNavigationStyle" parent="Widget.Material3.BottomNavigationView">

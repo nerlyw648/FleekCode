@@ -20,4 +20,7 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="projectsFragmentTitle">Ваши проекты</string>
+    <string name="permissionStorageTitle">Доступ к хранилищу</string>
+    <string name="permissionStorageText">Для работы с проектами приложению требуется доступ к хранилищу устройства</string>
+    <string name="permissionStorageButton">Предоставить разрешение</string>
 </resources>

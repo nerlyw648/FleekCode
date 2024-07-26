@@ -3,6 +3,7 @@ package fleek.code;
 import static androidx.core.app.ActivityCompat.requestPermissions;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import fleek.code.activities.ThemedActivity;
 import fleek.code.databinding.ActivityMainBinding;
 import fleek.code.ui.dialogs.ModalDialog;
+import fleek.code.utils.ObjectMap;
 import fleek.code.utils.PermissionManager;
 import fleek.code.utils.Utils;
 
@@ -50,15 +52,24 @@ public class MainActivity extends ThemedActivity {
     @Override
     public void onRequestPermissionDialog(String ...permissions) {
         super.onRequestPermissionDialog(permissions);
-        //ModalDialog.show(this);
-        /*
         if (permissions[0].equals(Manifest.permission.MANAGE_EXTERNAL_STORAGE)) {
             if (Utils.getCurrentSdkVersion() >= 30 && !Environment.isExternalStorageManager()) {
-                Toast.makeText(this, "Дайте разрешение", 3000).show();
-                startActivity(new Intent(
-                        Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION,
-                        Uri.parse("package:" + getPackageName())));
+                ModalDialog.create()
+                        .setIcon(R.drawable.ic_folder)
+                        .setTitle(getString(R.string.permissionStorageTitle))
+                        .setText(getString(R.string.permissionStorageText))
+                        .setButtons(ObjectMap.of(
+                                getString(R.string.permissionStorageButton), new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        dialogInterface.dismiss();
+                                        startActivity(new Intent(
+                                                Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION,
+                                                Uri.parse("package:" + getPackageName())));
+                                    }
+                                }))
+                        .show(this);
             }
-        }*/
+        }
     }
 }

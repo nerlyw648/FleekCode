@@ -5,4 +5,7 @@
     <string name="mainActivityBottomMenuTools">Tools</string>
     <string name="mainActivityBottomMenuSettings">Settings</string>
     <string name="projectsFragmentTitle">Your projects</string>
+    <string name="permissionStorageTitle">Access to the storage</string>
+    <string name="permissionStorageText">To work with projects, the application needs access to the device storage</string>
+    <string name="permissionStorageButton">Grant permission</string>
 </resources>
