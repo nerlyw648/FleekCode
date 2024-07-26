@@ -61,6 +61,30 @@
         <item name="textInputStyle">@style/textInput</item>
         <item name="materialButtonStyle">@style/button</item>
         <item name="bottomNavigationStyle">@style/bottomNavigationStyle</item>
+        <item name="android:textAppearance">@style/textStyle</item>
+
+        <item name="toolbarStyle">@style/toolbarStyle</item>
+    </style>
+
+    <style name="toolbarStyle" parent="Widget.Material3.Toolbar">
+        <item name="titleTextAppearance">@style/toolbarTitleStyle</item>
+    </style>
+
+    <style name="titleStyle" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="toolbarTitleStyle" parent="@style/titleStyle">
+        <item name="android:textSize">21sp</item>
+    </style>
+
+    <style name="textStyle" parent="TextAppearance.MaterialComponents.Body1">
+
+    </style>
+
+    <style name="dialogStyle" parent="MaterialAlertDialog.Material3">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
     </style>
 
     <style name="bottomNavigationStyle" parent="Widget.Material3.BottomNavigationView">

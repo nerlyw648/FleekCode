@@ -2,6 +2,7 @@ package fleek.code.utils;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 
 public class Utils {
     public static void startActivity(Context context, Class<?> clazz) {
@@ -15,5 +16,9 @@ public class Utils {
 
     public static void startActivity(Context context, Intent intent) {
         context.startActivity(intent);
+    }
+
+    public static int getCurrentSdkVersion() {
+        return Build.VERSION.SDK_INT;
     }
 }

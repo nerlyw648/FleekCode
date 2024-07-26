@@ -2,6 +2,7 @@ package fleek.code.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
@@ -31,5 +32,18 @@ public class ThemedActivity extends AppCompatActivity {
             materialToolbar.setNavigationIcon(R.drawable.ic_back);
             materialToolbar.setNavigationOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
         }
+    }
+
+    public void onRequestPermissionResult(String ...permissions) {}
+
+    public void onRequestPermissionDialog(String ...permissions) {}
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            onRequestPermissionResult(permissions);
+        } else onRequestPermissionDialog(permissions[0]);
     }
 }

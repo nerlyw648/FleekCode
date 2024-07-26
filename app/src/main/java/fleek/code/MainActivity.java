@@ -1,6 +1,14 @@
 package fleek.code;
 
+import static androidx.core.app.ActivityCompat.requestPermissions;
+
+import android.Manifest;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.Settings;
+import android.widget.Toast;
 
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -10,6 +18,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import fleek.code.activities.ThemedActivity;
 import fleek.code.databinding.ActivityMainBinding;
+import fleek.code.ui.dialogs.ModalDialog;
+import fleek.code.utils.PermissionManager;
+import fleek.code.utils.Utils;
 
 public class MainActivity extends ThemedActivity {
 
@@ -25,5 +36,29 @@ public class MainActivity extends ThemedActivity {
         final NavController navController = navHostFragment.getNavController();
         final BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
         NavigationUI.setupWithNavController(bottomNav, navController);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (Utils.getCurrentSdkVersion() >= 30) {
+            PermissionManager.checkPermission(this, Manifest.permission.MANAGE_EXTERNAL_STORAGE);
+        } else PermissionManager.checkPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE);
+    }
+
+    @Override
+    public void onRequestPermissionDialog(String ...permissions) {
+        super.onRequestPermissionDialog(permissions);
+        //ModalDialog.show(this);
+        /*
+        if (permissions[0].equals(Manifest.permission.MANAGE_EXTERNAL_STORAGE)) {
+            if (Utils.getCurrentSdkVersion() >= 30 && !Environment.isExternalStorageManager()) {
+                Toast.makeText(this, "Дайте разрешение", 3000).show();
+                startActivity(new Intent(
+                        Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION,
+                        Uri.parse("package:" + getPackageName())));
+            }
+        }*/
     }
 }

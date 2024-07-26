@@ -5,7 +5,7 @@
     <color name="colorPrimary">#2B5F42</color>
 
     <!-- Light Theme Colors -->
-    <color name="colorPrimaryLight">@color/colorPrimary</color>
+    <color name="colorPrimaryLight">#35618E</color>
     <color name="colorOnPrimaryLight">#FFFFFF</color>
     <color name="colorPrimaryContainerLight">#D1E4FF</color>
     <color name="colorOnPrimaryContainerLight">#001D36</color>
@@ -54,7 +54,7 @@
     <color name="colorSurfaceContainerHighestLight">#E1E2E8</color>
 
     <!-- Dark Theme Colors -->
-    <color name="colorPrimaryDark">@color/colorPrimary</color>
+    <color name="colorPrimaryDark">#A0CAFD</color>
     <color name="colorOnPrimaryDark">#003258</color>
     <color name="colorPrimaryContainerDark">#184975</color>
     <color name="colorOnPrimaryContainerDark">#D1E4FF</color>
