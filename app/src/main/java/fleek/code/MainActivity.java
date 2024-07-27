@@ -19,9 +19,12 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.IOException;
+
 import fleek.code.activities.ThemedActivity;
 import fleek.code.databinding.ActivityMainBinding;
 import fleek.code.ui.dialogs.ModalDialog;
+import fleek.code.utils.FileManager;
 import fleek.code.utils.ObjectMap;
 import fleek.code.utils.PermissionManager;
 import fleek.code.utils.Utils;
@@ -47,6 +50,7 @@ public class MainActivity extends ThemedActivity {
         super.onResume();
         if (Utils.getCurrentSdkVersion() >= 30) {
             PermissionManager.checkPermissions(this, Manifest.permission.MANAGE_EXTERNAL_STORAGE);
+            initWorkspace();
         } else PermissionManager.checkPermissions(this, Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE);
     }
@@ -70,6 +74,20 @@ public class MainActivity extends ThemedActivity {
                         }))
                 .setDismissible(false)
                 .show(this);
+    }
+
+    public void initWorkspace() {
+        try {
+            FileManager.initWorkspace(this);
+        } catch (IOException error) {
+            error.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(String... permissions) {
+        super.onRequestPermissionsResult(permissions);
+        initWorkspace();
     }
 
     @Override

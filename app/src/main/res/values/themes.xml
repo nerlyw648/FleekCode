@@ -65,15 +65,12 @@
 
         <item name="toolbarStyle">@style/toolbarStyle</item>
         <item name="materialAlertDialogTheme">@style/materialDialogTheme</item>
-        <item name="alertDialogTheme">@style/materialDialogTheme</item>
-        <item name="android:alertDialogTheme">@style/materialDialogTheme</item>
+        <item name="alertDialogTheme">@style/alertDialogTheme</item>
     </style>
 
     <style name="Preference.SwitchPreferenceCompat" parent="Preference.SwitchPreferenceCompat.Material">
         <item name="widgetLayout">@layout/material_switch</item>
     </style>
-
-
 
     <style name="toolbarStyle" parent="Widget.Material3.Toolbar">
         <item name="titleTextAppearance">@style/toolbarTitleStyle</item>
@@ -89,6 +86,11 @@
 
     <style name="textStyle" parent="TextAppearance.MaterialComponents.Body1">
 
+    </style>
+
+    <style name="alertDialogTheme" parent="@style/materialDialogTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@drawable/shape_corners</item>
     </style>
 
     <style name="materialDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog.Centered">
