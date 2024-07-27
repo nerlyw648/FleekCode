@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="7dp">
+
+    <ImageView
+        android:id="@+id/projectIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_folder"
+        />
+
+    <TextView
+        android:id="@+id/projectName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginLeft="10dp"
+        style="@style/titleStyle"
+        android:textSize="20sp"
+        android:gravity="left"
+        app:layout_constraintLeft_toRightOf="@id/projectIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/projectType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginLeft="10dp"
+        android:textSize="16sp"
+        android:gravity="left"
+        app:layout_constraintLeft_toRightOf="@id/projectIcon"
+        app:layout_constraintTop_toBottomOf="@id/projectName"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
