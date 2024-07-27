@@ -34,16 +34,16 @@ public class ThemedActivity extends AppCompatActivity {
         }
     }
 
-    public void onRequestPermissionResult(String ...permissions) {}
+    public void onRequestPermissionsResult(String ...permissions) {}
 
-    public void onRequestPermissionDialog(String ...permissions) {}
+    public void onRequestPermissionsDialog(String ...permissions) {}
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            onRequestPermissionResult(permissions);
-        } else onRequestPermissionDialog(permissions[0]);
+            onRequestPermissionsResult(permissions);
+        } else onRequestPermissionsDialog(permissions[0]);
     }
 }

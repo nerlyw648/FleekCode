@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -60,6 +61,11 @@ public class ModalDialog extends DialogFragment {
 
     public ModalDialog setButtons(ObjectMap<String, DialogInterface.OnClickListener> buttons) {
         this.buttons = buttons;
+        return this;
+    }
+
+    public ModalDialog setDismissible(boolean dismissible) {
+        setCancelable(dismissible);
         return this;
     }
 

@@ -10,7 +10,9 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
 import android.widget.Toast;
+import android.window.OnBackInvokedDispatcher;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
@@ -44,12 +46,12 @@ public class MainActivity extends ThemedActivity {
     protected void onResume() {
         super.onResume();
         if (Utils.getCurrentSdkVersion() >= 30) {
-            PermissionManager.checkPermission(this, Manifest.permission.MANAGE_EXTERNAL_STORAGE);
-        } else PermissionManager.checkPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE,
+            PermissionManager.checkPermissions(this, Manifest.permission.MANAGE_EXTERNAL_STORAGE);
+        } else PermissionManager.checkPermissions(this, Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE);
     }
 
-    public void sendRequestPermissionDialog(String ...permissions) {
+    public void sendRequestPermissionsDialog(String ...permissions) {
         ModalDialog.create()
                 .setIcon(R.drawable.ic_folder)
                 .setTitle(getString(R.string.permissionStorageTitle))
@@ -66,16 +68,17 @@ public class MainActivity extends ThemedActivity {
                                 } else PermissionManager.requestPermission(MainActivity.this, permissions);
                             }
                         }))
+                .setDismissible(false)
                 .show(this);
     }
 
     @Override
-    public void onRequestPermissionDialog(String ...permissions) {
-        super.onRequestPermissionDialog(permissions);
+    public void onRequestPermissionsDialog(String ...permissions) {
+        super.onRequestPermissionsDialog(permissions);
         if (permissions[0].equals(Manifest.permission.MANAGE_EXTERNAL_STORAGE)) {
             if (Utils.getCurrentSdkVersion() >= 30 && !Environment.isExternalStorageManager()) {
-                sendRequestPermissionDialog(permissions);
+                sendRequestPermissionsDialog(permissions);
             }
-        } else sendRequestPermissionDialog(permissions);
+        } else sendRequestPermissionsDialog(permissions);
     }
 }
