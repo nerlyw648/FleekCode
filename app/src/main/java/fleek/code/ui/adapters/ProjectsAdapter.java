@@ -52,14 +52,17 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Holder
         if (project.type.equals(Project.ANDROID)) {
             holder.binding.projectIcon.setImageTintList(ColorStateList.valueOf(activity.getColor(R.color.colorGreen)));
             holder.binding.projectIcon.setImageResource(R.drawable.ic_android);
+            holder.binding.projectType.setText("Android project");
         }
         if (project.type.equals(Project.JAVA)) {
             holder.binding.projectIcon.setImageTintList(ColorStateList.valueOf(activity.getColor(R.color.colorOrange)));
             holder.binding.projectIcon.setImageResource(R.drawable.ic_java);
+            holder.binding.projectType.setText(project.isGradleSupport ? "Java project (with Gradle)" : "Java project");
         }
         if (project.type.equals(Project.UNKNOWN)) {
             holder.binding.projectIcon.setImageTintList(ColorStateList.valueOf(activity.getColor(R.color.colorOrange)));
             holder.binding.projectIcon.setImageResource(R.drawable.ic_question);
+            holder.binding.projectType.setText("Other project...");
         }
     }
 

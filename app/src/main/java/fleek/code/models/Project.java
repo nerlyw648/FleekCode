@@ -13,4 +13,6 @@ public class Project {
     public String name;
     public String type;
     public ObjectList<Path> openedFiles = new ObjectList<>();
+
+    public boolean isGradleSupport = true;
 }

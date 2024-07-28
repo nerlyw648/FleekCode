@@ -107,6 +107,7 @@ public class ProjectsFragment extends Fragment implements Observer<ProjectsFragm
                                                 Pattern.compile("\\.java").matcher(filePath.getFileName().toString()).find())
                                         .findFirst().orElse(null) != null) {
                                     project.type = Project.JAVA;
+                                    project.isGradleSupport = false;
                                 } else project.type = Project.UNKNOWN;
                             }
 
