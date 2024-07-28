@@ -1,22 +1,29 @@
 package fleek.code.ui.adapters;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
+import fleek.code.R;
 import fleek.code.activities.ThemedActivity;
 import fleek.code.databinding.ItemProjectBinding;
+import fleek.code.models.Project;
+import fleek.code.utils.FileManager;
 import fleek.code.utils.ObjectList;
 
 public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Holder> {
 
     private ThemedActivity activity;
-    private ObjectList<Path> projects;
+    private ObjectList<Project> projects;
 
-    public ProjectsAdapter(ThemedActivity activity, ObjectList<Path> projects) {
+    public ProjectsAdapter(ThemedActivity activity, ObjectList<Project> projects) {
         this.activity = activity;
         this.projects = projects;
     }
@@ -39,9 +46,21 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Holder
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        final Path project = projects.get(position);
-        holder.binding.projectName.setText(project.getFileName().toString());
-        holder.binding.projectType.setText("Android Project");
+        final Project project = projects.get(position);
+        holder.binding.projectName.setText(project.name);
+
+        if (project.type.equals(Project.ANDROID)) {
+            holder.binding.projectIcon.setImageTintList(ColorStateList.valueOf(activity.getColor(R.color.colorGreen)));
+            holder.binding.projectIcon.setImageResource(R.drawable.ic_android);
+        }
+        if (project.type.equals(Project.JAVA)) {
+            holder.binding.projectIcon.setImageTintList(ColorStateList.valueOf(activity.getColor(R.color.colorOrange)));
+            holder.binding.projectIcon.setImageResource(R.drawable.ic_java);
+        }
+        if (project.type.equals(Project.UNKNOWN)) {
+            holder.binding.projectIcon.setImageTintList(ColorStateList.valueOf(activity.getColor(R.color.colorOrange)));
+            holder.binding.projectIcon.setImageResource(R.drawable.ic_question);
+        }
     }
 
     @Override

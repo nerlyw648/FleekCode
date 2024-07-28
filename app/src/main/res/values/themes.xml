@@ -66,10 +66,16 @@
         <item name="toolbarStyle">@style/toolbarStyle</item>
         <item name="materialAlertDialogTheme">@style/materialDialogTheme</item>
         <item name="alertDialogTheme">@style/alertDialogTheme</item>
+        <item name="circularProgressIndicatorStyle">@style/progressBarStyle</item>
     </style>
 
     <style name="Preference.SwitchPreferenceCompat" parent="Preference.SwitchPreferenceCompat.Material">
         <item name="widgetLayout">@layout/material_switch</item>
+    </style>
+    
+    <style name="progressBarStyle" parent="Widget.Material3.CircularProgressIndicator">
+        <item name="android:indeterminate">true</item>
+        <item name="trackCornerRadius">10dp</item>
     </style>
 
     <style name="toolbarStyle" parent="Widget.Material3.Toolbar">
@@ -81,7 +87,7 @@
     </style>
 
     <style name="toolbarTitleStyle" parent="@style/titleStyle">
-        <item name="android:textSize">21sp</item>
+        <item name="android:textSize">24sp</item>
     </style>
 
     <style name="textStyle" parent="TextAppearance.MaterialComponents.Body1">

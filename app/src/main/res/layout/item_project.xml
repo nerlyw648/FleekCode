@@ -3,8 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingHorizontal="10dp"
-    android:paddingVertical="7dp">
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="7dp"
+    android:clickable="true"
+    android:background="?attr/selectableItemBackground">
 
     <ImageView
         android:id="@+id/projectIcon"
@@ -13,33 +15,57 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/ic_folder"
+        android:src="@drawable/ic_java"
+        android:background="@drawable/shape_item_corners"
+        android:padding="12dp"
+        app:tint="@color/colorOrange"
         />
 
-    <TextView
-        android:id="@+id/projectName"
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:layout_marginLeft="10dp"
-        style="@style/titleStyle"
-        android:textSize="20sp"
-        android:gravity="left"
         app:layout_constraintLeft_toRightOf="@id/projectIcon"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/projectOpen"
+        android:layout_marginLeft="12dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/projectName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            style="@style/titleStyle"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/projectType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="14sp"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/projectOpen"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintRight_toLeftOf="@id/projectActions"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/ic_open"
         />
 
-    <TextView
-        android:id="@+id/projectType"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:layout_marginLeft="10dp"
-        android:textSize="16sp"
-        android:gravity="left"
-        app:layout_constraintLeft_toRightOf="@id/projectIcon"
-        app:layout_constraintTop_toBottomOf="@id/projectName"
+    <ImageView
+        android:id="@+id/projectActions"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_more"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
