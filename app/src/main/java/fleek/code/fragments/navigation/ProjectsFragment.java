@@ -78,9 +78,11 @@ public class ProjectsFragment extends Fragment implements Observer<ProjectsFragm
         data.loadThread = new Thread(() -> {
             try {
                 final ObjectList<Project> projectsFiles = ObjectList.of();
+                if (Thread.currentThread().isInterrupted()) return;
 
                 FileManager.getFilesFromDir(false)
                         .stream().forEach(projectPath -> {
+                            if (Thread.currentThread().isInterrupted()) return;
                             if (!Files.isDirectory(projectPath)) return;
 
                             final Project project = new Project();
