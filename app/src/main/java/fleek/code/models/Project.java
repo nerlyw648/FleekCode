@@ -26,14 +26,15 @@ public class Project {
         project.name = projectPath.getFileName().toString();
 
         final Path path = Paths.get(projectPath.toString() + "/settings.gradle");
-        if (Files.exists(path) && Files.isDirectory(path)) {
+        if (Files.exists(path) && !Files.isDirectory(path)) {
             final String settings = FileManager.readFile(path.toString());
             final Matcher includeMatcher = Pattern.compile("include(\s|)'(.*?)'").matcher(settings);
 
             if (includeMatcher.find()) {
                 final String includeModule = includeMatcher.group(2);
+                final Path manifestPath = Paths.get(projectPath + "/" + includeModule + "/src/main/AndroidManifest.xml");
 
-                if (Files.exists(Paths.get(projectPath + "/" + includeModule + "/src/main/AndroidManifest.xml"))) {
+                if (Files.exists(manifestPath) && !Files.isDirectory(manifestPath)) {
                     project.type = Project.ANDROID;
                 } else project.type = Project.JAVA;
 
@@ -43,7 +44,7 @@ public class Project {
 
             if (javaNonGradleProject.stream()
                     .filter(filePath ->
-                            Files.isDirectory(filePath) && Pattern.compile("\\.java")
+                            !Files.isDirectory(filePath) && Pattern.compile("\\.java")
                                     .matcher(filePath.getFileName().toString()).find())
                     .findFirst().orElse(null) != null) {
                 project.type = Project.JAVA;
