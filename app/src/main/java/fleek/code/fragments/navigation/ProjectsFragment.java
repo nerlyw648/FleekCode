@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
 
 import fleek.code.R;
 import fleek.code.activities.ThemedActivity;
+import fleek.code.activities.project.SelectTemplateActivity;
 import fleek.code.databinding.FragmentProjectsBinding;
 import fleek.code.models.Project;
 import fleek.code.ui.adapters.ProjectsAdapter;
@@ -57,6 +58,7 @@ public class ProjectsFragment extends Fragment implements Observer<ProjectsFragm
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.projectsCreate.setOnClickListener(v -> Utils.startActivity(getActivity(), SelectTemplateActivity.class));
     }
 
     @Override

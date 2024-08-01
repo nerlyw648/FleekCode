@@ -25,4 +25,5 @@
     <string name="permissionStorageButton">Предоставить разрешение</string>
     <string name="projectsFragmentEmptyTitle">Здесь пока пусто</string>
     <string name="projectsFragmentEmptyText">" Создайте проект, нажав на кнопку \"+\", или импортируйте проект в папку FleekCode "</string>
+    <string name="selectTemplateActivityTitle">Выберите шаблон проекта</string>
 </resources>

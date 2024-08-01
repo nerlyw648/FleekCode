@@ -18,6 +18,11 @@
         android:requestLegacyExternalStorage="true">
 
         <activity
+            android:name=".activities.project.SelectTemplateActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true"/>
+
+        <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="true">

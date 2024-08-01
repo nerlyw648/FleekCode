@@ -17,12 +17,12 @@ public class Utils {
         context.startActivity(new Intent(context, clazz));
     }
 
-    public static void startActivity(Context context, Class<?> clazz, int flags) {
+    public static void startActivity(ThemedActivity context, Class<?> clazz, int flags) {
         context.startActivity(new Intent(context, clazz)
                 .addFlags(flags));
     }
 
-    public static void startActivity(Context context, Intent intent) {
+    public static void startActivity(ThemedActivity context, Intent intent) {
         context.startActivity(intent);
     }
 

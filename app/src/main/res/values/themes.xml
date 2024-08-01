@@ -88,6 +88,7 @@
 
     <style name="toolbarStyle" parent="Widget.Material3.Toolbar">
         <item name="titleTextAppearance">@style/toolbarTitleStyle</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
     </style>
 
     <style name="titleStyle" parent="TextAppearance.MaterialComponents.Headline1">
@@ -95,7 +96,7 @@
     </style>
 
     <style name="toolbarTitleStyle" parent="@style/titleStyle">
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">21sp</item>
     </style>
 
     <style name="textStyle" parent="TextAppearance.MaterialComponents.Body1">
