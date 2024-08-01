@@ -28,7 +28,7 @@ public class Project {
         final Path path = Paths.get(projectPath.toString() + "/settings.gradle");
         if (Files.exists(path) && !Files.isDirectory(path)) {
             final String settings = FileManager.readFile(path.toString());
-            final Matcher includeMatcher = Pattern.compile("include(\s|)'(.*?)'").matcher(settings);
+            final Matcher includeMatcher = Pattern.compile("include(\s|)':(.*?)'").matcher(settings);
 
             if (includeMatcher.find()) {
                 final String includeModule = includeMatcher.group(2);

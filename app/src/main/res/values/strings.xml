@@ -23,4 +23,6 @@
     <string name="permissionStorageTitle">Доступ к хранилищу</string>
     <string name="permissionStorageText">Для работы с проектами приложению требуется доступ к хранилищу устройства</string>
     <string name="permissionStorageButton">Предоставить разрешение</string>
+    <string name="projectsFragmentEmptyTitle">Здесь пока пусто</string>
+    <string name="projectsFragmentEmptyText">" Создайте проект, нажав на кнопку \"+\", или импортируйте проект в папку FleekCode "</string>
 </resources>

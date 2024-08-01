@@ -20,6 +20,7 @@ import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import fleek.code.R;
 import fleek.code.activities.ThemedActivity;
 import fleek.code.databinding.FragmentProjectsBinding;
 import fleek.code.models.Project;
@@ -65,6 +66,15 @@ public class ProjectsFragment extends Fragment implements Observer<ProjectsFragm
         binding.projectsList.setVisibility(!data.isLoaded ? View.INVISIBLE : View.VISIBLE);
         binding.projectsLoad.setVisibility(!data.isLoaded ? View.VISIBLE : View.INVISIBLE);
 
+        if (projectsAdapter != null && projectsAdapter.getItemCount() == 0) {
+            binding.projectsList.setVisibility(View.INVISIBLE);
+            Utils.setEmptyLayoutVisible(binding.getRoot(),
+                    getString(R.string.projectsFragmentEmptyTitle),
+                    getString(R.string.projectsFragmentEmptyText));
+        } else {
+            Utils.setEmptyLayoutInvisible(binding.getRoot());
+            binding.projectsList.setVisibility(View.VISIBLE);
+        }
     }
 
     private ProjectsAdapter projectsAdapter;

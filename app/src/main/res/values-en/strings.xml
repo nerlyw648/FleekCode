@@ -8,4 +8,6 @@
     <string name="permissionStorageTitle">Access to the storage</string>
     <string name="permissionStorageText">To work with projects, the application needs access to the device storage</string>
     <string name="permissionStorageButton">Grant permission</string>
+    <string name="projectsFragmentEmptyTitle">It\'s still empty here</string>
+    <string name="projectsFragmentEmptyText">Create a project by clicking on the \"+\" button, or import the project into the FleekCode folder</string>
 </resources>
