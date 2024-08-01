@@ -69,6 +69,14 @@
         <item name="circularProgressIndicatorStyle">@style/progressBarStyle</item>
     </style>
 
+    <style name="iconClickableStyle">
+        <item name="android:clickable">true</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+    </style>
+
     <style name="Preference.SwitchPreferenceCompat" parent="Preference.SwitchPreferenceCompat.Material">
         <item name="widgetLayout">@layout/material_switch</item>
     </style>
