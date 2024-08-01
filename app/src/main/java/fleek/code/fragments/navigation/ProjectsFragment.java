@@ -89,7 +89,7 @@ public class ProjectsFragment extends Fragment implements Observer<ProjectsFragm
                             project.name = projectPath.getFileName().toString();
 
                             final Path path = Paths.get(projectPath.toString() + "/settings.gradle");
-                            if (Files.exists(path)) {
+                            if (Files.exists(path) && Files.isDirectory(path)) {
                                 final String settings = FileManager.readFile(path.toString());
                                 final Matcher includeMatcher = Pattern.compile("include(\s|)'(.*?)'").matcher(settings);
 
@@ -106,7 +106,8 @@ public class ProjectsFragment extends Fragment implements Observer<ProjectsFragm
 
                                 if (javaNonGradleProject.stream()
                                         .filter(filePath ->
-                                                Pattern.compile("\\.java").matcher(filePath.getFileName().toString()).find())
+                                                Files.isDirectory(filePath) && Pattern.compile("\\.java")
+                                                        .matcher(filePath.getFileName().toString()).find())
                                         .findFirst().orElse(null) != null) {
                                     project.type = Project.JAVA;
                                     project.isGradleSupport = false;
