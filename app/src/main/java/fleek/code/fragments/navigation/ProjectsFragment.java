@@ -76,56 +76,22 @@ public class ProjectsFragment extends Fragment implements Observer<ProjectsFragm
         if (data.loadThread != null) data.loadThread.interrupt();
 
         data.loadThread = new Thread(() -> {
-            try {
-                final ObjectList<Project> projectsFiles = ObjectList.of();
+            final ObjectList<Project> projectsFiles = ObjectList.of();
+            if (Thread.currentThread().isInterrupted()) return;
+
+            FileManager.getFilesFromDir(false).stream().forEach(projectPath -> {
                 if (Thread.currentThread().isInterrupted()) return;
+                if (!Files.isDirectory(projectPath)) return;
 
-                FileManager.getFilesFromDir(false)
-                        .stream().forEach(projectPath -> {
-                            if (Thread.currentThread().isInterrupted()) return;
-                            if (!Files.isDirectory(projectPath)) return;
+                projectsFiles.add(Project.loadProject(projectPath));
+            });
 
-                            final Project project = new Project();
-                            project.name = projectPath.getFileName().toString();
-
-                            final Path path = Paths.get(projectPath.toString() + "/settings.gradle");
-                            if (Files.exists(path) && Files.isDirectory(path)) {
-                                final String settings = FileManager.readFile(path.toString());
-                                final Matcher includeMatcher = Pattern.compile("include(\s|)'(.*?)'").matcher(settings);
-
-                                if (includeMatcher.find()) {
-                                    final String includeModule = includeMatcher.group(2);
-
-                                    if (Files.exists(Paths.get(projectPath + "/" + includeModule + "/src/main/AndroidManifest.xml"))) {
-                                        project.type = Project.ANDROID;
-                                    } else project.type = Project.JAVA;
-
-                                }
-                            } else {
-                                final ObjectList<Path> javaNonGradleProject = FileManager.getFilesFromDir(projectPath.toString(), true);
-
-                                if (javaNonGradleProject.stream()
-                                        .filter(filePath ->
-                                                Files.isDirectory(filePath) && Pattern.compile("\\.java")
-                                                        .matcher(filePath.getFileName().toString()).find())
-                                        .findFirst().orElse(null) != null) {
-                                    project.type = Project.JAVA;
-                                    project.isGradleSupport = false;
-                                } else project.type = Project.UNKNOWN;
-                            }
-
-                            projectsFiles.add(project);
-                        });
-
-                Utils.ui(() -> {
-                    data.isLoaded = true;
-                    viewModel.update();
-                    projectsAdapter = new ProjectsAdapter((ThemedActivity) getActivity(), projectsFiles);
-                    binding.projectsList.setAdapter(projectsAdapter);
-                });
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            Utils.ui(() -> {
+                data.isLoaded = true;
+                viewModel.update();
+                projectsAdapter = new ProjectsAdapter((ThemedActivity) getActivity(), projectsFiles);
+                binding.projectsList.setAdapter(projectsAdapter);
+            });
         });
 
         data.loadThread.start();
@@ -135,14 +101,10 @@ public class ProjectsFragment extends Fragment implements Observer<ProjectsFragm
     public void onResume() {
         super.onResume();
 
-        try {
-            binding.projectsList.setLayoutManager(new LinearLayoutManager(getContext()));
-            loadProjects();
+        binding.projectsList.setLayoutManager(new LinearLayoutManager(getContext()));
+        loadProjects();
 
-            if (data != null) binding.projectsList.getLayoutManager().onRestoreInstanceState(data.projectsState);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        if (data != null) binding.projectsList.getLayoutManager().onRestoreInstanceState(data.projectsState);
     }
 
     @Override
