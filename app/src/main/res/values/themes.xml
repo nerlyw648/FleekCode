@@ -67,6 +67,11 @@
         <item name="materialAlertDialogTheme">@style/materialDialogTheme</item>
         <item name="alertDialogTheme">@style/alertDialogTheme</item>
         <item name="circularProgressIndicatorStyle">@style/progressBarStyle</item>
+        <item name="floatingActionButtonStyle">@style/fabStyle</item>
+    </style>
+
+    <style name="fabStyle" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="elevation">0dp</item>
     </style>
 
     <style name="iconClickableStyle">
@@ -75,6 +80,11 @@
         <item name="android:padding">6dp</item>
         <item name="android:layout_width">24dp</item>
         <item name="android:layout_height">24dp</item>
+    </style>
+
+    <style name="clickableStyle">
+        <item name="android:clickable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
     </style>
 
     <style name="Preference.SwitchPreferenceCompat" parent="Preference.SwitchPreferenceCompat.Material">

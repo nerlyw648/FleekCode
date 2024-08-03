@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk ${targetSdkVersion}
+    namespace "$packagename"
+	
+    defaultConfig {
+        applicationId "$packagename"
+        minSdk ${minSdkVersion}
+        targetSdk ${targetSdkVersion}
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {	
+	implementation 'com.badlogicgames.gdx:gdx-backend-android:1.12.1'
+    //natives "com.badlogicgames.gdx:gdx-platform:1.12.1:natives-armeabi-v7a"
+    //bug supports only one natives
+    natives "com.badlogicgames.gdx:gdx-platform:1.12.1:natives-arm64-v8a"
+    //natives "com.badlogicgames.gdx:gdx-platform:1.12.1:natives-x86"
+    //natives "com.badlogicgames.gdx:gdx-platform:1.12.1:natives-x86_64"
+}

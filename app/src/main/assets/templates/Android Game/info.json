@@ -1,0 +1,6 @@
+{
+	"name" : "Android Game",
+	"minSdk" : 21,
+	"supportsJava": true,
+	"supportsKotlin": true
+}

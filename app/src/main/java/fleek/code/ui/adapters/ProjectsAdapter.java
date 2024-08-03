@@ -20,8 +20,8 @@ import fleek.code.utils.ObjectList;
 
 public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Holder> {
 
-    private ThemedActivity activity;
-    private ObjectList<Project> projects;
+    private final ThemedActivity activity;
+    private final ObjectList<Project> projects;
 
     public ProjectsAdapter(ThemedActivity activity, ObjectList<Project> projects) {
         this.activity = activity;
