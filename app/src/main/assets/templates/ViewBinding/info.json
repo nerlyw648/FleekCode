@@ -1,0 +1,6 @@
+{
+    "name" : "ViewBinding",
+    "minSdk" : 21,
+    "supportsKotlin": true,
+    "supportsJava": true
+}
