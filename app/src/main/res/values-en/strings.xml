@@ -11,4 +11,15 @@
     <string name="projectsFragmentEmptyTitle">It\'s still empty here</string>
     <string name="projectsFragmentEmptyText">Create a project by clicking on the \"+\" button, or import the project into the FleekCode folder</string>
     <string name="selectTemplateActivityTitle">Select a project template</string>
+    <string name="createProjectActivityTitle">Creating a project</string>
+    <string name="createProjectActivityNameHint">Project Name</string>
+    <string name="createProjectActivityNameSubhint">Enter the name of the project</string>
+    <string name="createProjectActivityPackageHint">Package Name</string>
+    <string name="createProjectActivitySdkVersionHint">Min. SDK Version</string>
+    <string name="createProjectActivityLanguageHint">Programming language</string>
+    <string name="createProjectActivityButton">Create a project</string>
+    <string name="createProjectActivitySdkVersionSubhint">Select the SDK version</string>
+    <string name="createProjectActivityLanguageSubhint">Select the project language</string>
+    <string name="createProjectActivityExists">The project already exists</string>
+    <string name="createProjectActivityPackageInvalid">The package format is incorrect. Example: com.example</string>
 </resources>

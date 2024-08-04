@@ -1,5 +1,6 @@
 package fleek.code.ui.adapters;
 
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -7,9 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import fleek.code.R;
 import fleek.code.activities.ThemedActivity;
+import fleek.code.activities.project.CreateProjectActivity;
 import fleek.code.databinding.ItemTemplateBinding;
 import fleek.code.models.Template;
 import fleek.code.utils.ObjectList;
+import fleek.code.utils.Utils;
 
 public class TemplatesAdapter extends RecyclerView.Adapter<TemplatesAdapter.Holder> {
 
@@ -43,6 +46,12 @@ public class TemplatesAdapter extends RecyclerView.Adapter<TemplatesAdapter.Hold
 
         holder.binding.templateImage.setImageDrawable(template.preview);
         holder.binding.templateName.setText(template.name);
+        holder.binding.templateLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Utils.startActivity(activity, CreateProjectActivity.class);
+            }
+        });
     }
 
     @Override

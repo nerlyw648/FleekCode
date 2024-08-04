@@ -11,6 +11,7 @@
         android:background="@drawable/shape_item_corners_outline"
         android:clickable="true"
         android:gravity="center"
+        android:id="@+id/templateLayout"
         android:paddingVertical="10dp"
         android:paddingHorizontal="15dp"
         android:orientation="vertical"

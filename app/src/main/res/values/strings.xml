@@ -26,4 +26,42 @@
     <string name="projectsFragmentEmptyTitle">Здесь пока пусто</string>
     <string name="projectsFragmentEmptyText">" Создайте проект, нажав на кнопку \"+\", или импортируйте проект в папку FleekCode "</string>
     <string name="selectTemplateActivityTitle">Выберите шаблон проекта</string>
+    <string name="createProjectActivityTitle">Создание проекта</string>
+    <string name="createProjectActivityNameHint">Имя проекта</string>
+    <string name="createProjectActivityNameSubhint">Введите имя проекта</string>
+    <string name="createProjectActivityPackageHint">Имя пакета</string>
+    <string name="createProjectActivityPackageSubhint">com.example</string>
+    <string name="createProjectActivitySdkVersionHint">Мин. версия SDK</string>
+    <string name="createProjectActivityLanguageHint">Язык программирования</string>
+    <string name="createProjectActivityButton">Создать проект</string>
+    <string name="createProjectActivitySdkVersionSubhint">Выберите версию SDK</string>
+    <string name="createProjectActivityLanguageSubhint">Выберите язык проекта</string>
+
+    <!-- SDK Versions -->
+    <string-array name="sdkVersions">
+        <item>API 21 (Android 5)</item>
+        <item>API 22 (Android 5.1)</item>
+        <item>API 23 (Android 6)</item>
+        <item>API 24 (Android 7)</item>
+        <item>API 25 (Android 7.1)</item>
+        <item>API 26 (Android 8)</item>
+        <item>API 27 (Android 8.1)</item>
+        <item>API 28 (Android 9)</item>
+        <item>API 29 (Android 10)</item>
+        <item>API 30 (Android 11)</item>
+        <item>API 31 (Android 12)</item>
+        <item>API 32 (Android 12L)</item>
+        <item>API 33 (Android 13)</item>
+        <item>API 34 (Android 14)</item>
+        <item>API 35 (Android 15 Beta)</item>
+    </string-array>
+
+    <!-- Languages -->
+
+    <string-array name="languages">
+        <item>Java</item>
+        <item>Kotlin</item>
+    </string-array>
+    <string name="createProjectActivityExists">Проект уже существует</string>
+    <string name="createProjectActivityPackageInvalid">Неправильный формат пакета. Пример: com.example</string>
 </resources>

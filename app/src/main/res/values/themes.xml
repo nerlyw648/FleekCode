@@ -68,6 +68,29 @@
         <item name="alertDialogTheme">@style/alertDialogTheme</item>
         <item name="circularProgressIndicatorStyle">@style/progressBarStyle</item>
         <item name="floatingActionButtonStyle">@style/fabStyle</item>
+        <item name="materialDividerStyle">@style/materialDivider</item>
+    </style>
+    
+    <style name="materialDivider" parent="Widget.Material3.MaterialDivider">
+        <item name="dividerThickness">0.5dp</item>
+    </style>
+
+    <style name="dropdownMenu" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="expandedHintEnabled">false</item>
+        <item name="materialThemeOverlay">@style/autoCompleteTextViewOverlay</item>
+    </style>
+
+    <style name="autoCompleteTextViewStyle" parent="Widget.Material3.AutoCompleteTextView.OutlinedBox">
+        <item name="android:drawablePadding">-7.5dp</item>
+        <item name="android:inputType">none</item>
+    </style>
+
+    <style name="autoCompleteTextViewOverlay">
+        <item name="autoCompleteTextViewStyle">@style/autoCompleteTextViewStyle</item>
     </style>
 
     <style name="fabStyle" parent="Widget.Material3.FloatingActionButton.Primary">
