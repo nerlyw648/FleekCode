@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/ic_folder"
+        android:id="@+id/projectFiles"
+        android:title="TODO"
+        app:showAsAction="always"
+        />
+    <item
+        android:icon="@drawable/ic_hardware"
+        android:id="@+id/projectBuildOutput"
+        android:title="TODO"
+        app:showAsAction="always"
+        />
+    <item
+        android:icon="@drawable/ic_sync_error"
+        android:id="@+id/projectErrors"
+        android:title="TODO"
+        app:showAsAction="always"
+        />
+    <item
+        android:icon="@drawable/ic_github"
+        android:id="@+id/projectGit"
+        android:title="TODO"
+        app:showAsAction="always"
+        />
+    <item
+        android:icon="@drawable/ic_menu"
+        android:id="@+id/projectMenu"
+        android:title="TODO"
+        app:showAsAction="always"
+        />
+</menu>

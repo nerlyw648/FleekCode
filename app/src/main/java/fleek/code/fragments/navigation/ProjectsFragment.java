@@ -22,6 +22,7 @@ import fleek.code.databinding.FragmentProjectsBinding;
 import fleek.code.models.Project;
 import fleek.code.ui.adapters.ProjectsAdapter;
 import fleek.code.ui.viewmodels.ProjectsFragmentViewModel;
+import fleek.code.ui.viewmodels.ViewModelBase;
 import fleek.code.utils.storage.FileManager;
 import fleek.code.utils.ObjectList;
 import fleek.code.utils.Utils;
@@ -37,7 +38,7 @@ public class ProjectsFragment extends Fragment implements Observer<ProjectsFragm
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewModel = new ViewModelProvider(this).get(ProjectsFragmentViewModel.class);
-        viewModel.getData().observe(this, this);
+        viewModel.getData(new ProjectsFragmentViewModel.Data()).observe(this, this);
     }
 
     @Override

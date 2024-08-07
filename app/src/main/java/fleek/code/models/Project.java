@@ -21,7 +21,7 @@ public class Project {
     public static String KOTLIN = "kotlin"; // todo: add
 
     public String name;
-    public String type;
+    public String type = UNKNOWN;
     public ObjectList<Path> openedFiles = new ObjectList<>();
 
     public boolean isGradleSupport = true;
@@ -73,6 +73,14 @@ public class Project {
         project.name = name;
 
         return project;
+    }
+
+    public String getProjectType() {
+        if (type.equals(Project.ANDROID)) {
+            return "Android Project";
+        } else if (type.equals(Project.JAVA) && isGradleSupport) {
+            return "Java Project (with Gradle)";
+        } else return "Java Project";
     }
 
     public static Project loadProject(Path projectPath) {
