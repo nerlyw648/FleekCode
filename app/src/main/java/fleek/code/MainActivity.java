@@ -1,19 +1,13 @@
 package fleek.code;
 
-import static androidx.core.app.ActivityCompat.requestPermissions;
-
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Parcelable;
 import android.provider.Settings;
-import android.widget.Toast;
-import android.window.OnBackInvokedDispatcher;
 
-import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
@@ -25,7 +19,7 @@ import java.io.IOException;
 import fleek.code.activities.ThemedActivity;
 import fleek.code.databinding.ActivityMainBinding;
 import fleek.code.ui.dialogs.ModalDialog;
-import fleek.code.utils.FileManager;
+import fleek.code.utils.storage.FileManager;
 import fleek.code.utils.ObjectMap;
 import fleek.code.utils.PermissionManager;
 import fleek.code.utils.Utils;

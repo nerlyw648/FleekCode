@@ -1,23 +1,18 @@
 package fleek.code.models;
 
 import android.graphics.drawable.Drawable;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.nio.file.Paths;
 
 import fleek.code.App;
-import fleek.code.utils.AssetHelper;
+import fleek.code.utils.storage.AssetHelper;
 import fleek.code.utils.ObjectList;
 
 public class Template {
 
     public Drawable preview;
     public String name;
-
-    public static void copyTemplate() {
-
-    }
 
     public static ObjectList<Template> getTemplates() {
         final ObjectList<Template> templates = ObjectList.of();

@@ -1,22 +1,20 @@
 package fleek.code.ui.adapters;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
-import android.graphics.Color;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import fleek.code.R;
 import fleek.code.activities.ThemedActivity;
+import fleek.code.activities.project.ProjectActivity;
 import fleek.code.databinding.ItemProjectBinding;
 import fleek.code.models.Project;
-import fleek.code.utils.FileManager;
 import fleek.code.utils.ObjectList;
+import fleek.code.utils.Utils;
 
 public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Holder> {
 
@@ -64,6 +62,19 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Holder
             holder.binding.projectIcon.setImageResource(R.drawable.ic_question);
             holder.binding.projectType.setText("Other project...");
         }
+
+        final View.OnClickListener onClickListener = new View.OnClickListener() {
+            private final Project _project = project;
+
+            @Override
+            public void onClick(View view) {
+                Utils.startActivity(activity, new Intent(activity, ProjectActivity.class)
+                        .putExtra("projectName", _project.name));
+            }
+        };
+
+        holder.binding.getRoot().setOnClickListener(onClickListener);
+        holder.binding.projectOpen.setOnClickListener(onClickListener);
     }
 
     @Override

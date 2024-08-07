@@ -1,5 +1,6 @@
 package fleek.code.ui.adapters;
 
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -47,9 +48,13 @@ public class TemplatesAdapter extends RecyclerView.Adapter<TemplatesAdapter.Hold
         holder.binding.templateImage.setImageDrawable(template.preview);
         holder.binding.templateName.setText(template.name);
         holder.binding.templateLayout.setOnClickListener(new View.OnClickListener() {
+            private final Template _template = template;
+
             @Override
             public void onClick(View view) {
-                Utils.startActivity(activity, CreateProjectActivity.class);
+                activity.getOnBackPressedDispatcher().onBackPressed();
+                Utils.startActivity(activity, new Intent(activity, CreateProjectActivity.class)
+                        .putExtra("templateName", _template.name));
             }
         });
     }

@@ -100,7 +100,6 @@
     <style name="iconClickableStyle">
         <item name="android:clickable">true</item>
         <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
-        <item name="android:padding">6dp</item>
         <item name="android:layout_width">24dp</item>
         <item name="android:layout_height">24dp</item>
     </style>

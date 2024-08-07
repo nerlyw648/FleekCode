@@ -13,12 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import fleek.code.R;
 import fleek.code.activities.ThemedActivity;
@@ -27,7 +22,7 @@ import fleek.code.databinding.FragmentProjectsBinding;
 import fleek.code.models.Project;
 import fleek.code.ui.adapters.ProjectsAdapter;
 import fleek.code.ui.viewmodels.ProjectsFragmentViewModel;
-import fleek.code.utils.FileManager;
+import fleek.code.utils.storage.FileManager;
 import fleek.code.utils.ObjectList;
 import fleek.code.utils.Utils;
 
