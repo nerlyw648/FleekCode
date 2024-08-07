@@ -55,8 +55,7 @@ public class MainActivity extends ThemedActivity {
                 .setIcon(R.drawable.ic_folder)
                 .setTitle(getString(R.string.permissionStorageTitle))
                 .setText(getString(R.string.permissionStorageText))
-                .setButtons(ObjectMap.of(
-                        getString(R.string.permissionStorageButton), new DialogInterface.OnClickListener() {
+                .setPositiveButton(getString(R.string.permissionStorageButton), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 dialogInterface.dismiss();
@@ -66,7 +65,7 @@ public class MainActivity extends ThemedActivity {
                                             Uri.parse("package:" + getPackageName())));
                                 } else PermissionManager.requestPermission(MainActivity.this, permissions);
                             }
-                        }))
+                        })
                 .setDismissible(false)
                 .show(this);
     }

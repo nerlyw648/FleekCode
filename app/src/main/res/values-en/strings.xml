@@ -22,4 +22,9 @@
     <string name="createProjectActivityLanguageSubhint">Select the project language</string>
     <string name="createProjectActivityExists">The project already exists</string>
     <string name="createProjectActivityPackageInvalid">The package format is incorrect. Example: com.example</string>
+    <string name="projectActivityConfirmExitTitle">Close the project?</string>
+    <string name="projectActivityConfirmExitText">All running tasks will be stopped and files saved.</string>
+    <string name="buttonAccept">Yes</string>
+    <string name="buttonDeny">No</string>
+    <string name="buttonCancel">Cancel</string>
 </resources>

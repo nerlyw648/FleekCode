@@ -30,7 +30,7 @@
     <string name="createProjectActivityNameHint">Имя проекта</string>
     <string name="createProjectActivityNameSubhint">Введите имя проекта</string>
     <string name="createProjectActivityPackageHint">Имя пакета</string>
-    <string name="createProjectActivityPackageSubhint">com.example</string>
+    <string name="createProjectActivityPackageSubhint" translatable="false">com.example</string>
     <string name="createProjectActivitySdkVersionHint">Мин. версия SDK</string>
     <string name="createProjectActivityLanguageHint">Язык программирования</string>
     <string name="createProjectActivityButton">Создать проект</string>
@@ -62,6 +62,12 @@
         <item>Java</item>
         <item>Kotlin</item>
     </string-array>
+
     <string name="createProjectActivityExists">Проект уже существует</string>
     <string name="createProjectActivityPackageInvalid">Неправильный формат пакета. Пример: com.example</string>
+    <string name="projectActivityConfirmExitTitle">Закрыть проект?</string>
+    <string name="projectActivityConfirmExitText">Все выполняющиеся задачи будут остановлены, а файлы сохранены</string>
+    <string name="buttonAccept">Да</string>
+    <string name="buttonDeny">Нет</string>
+    <string name="buttonCancel">Отмена</string>
 </resources>

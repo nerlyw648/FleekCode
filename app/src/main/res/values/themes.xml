@@ -144,6 +144,11 @@
         <item name="backgroundTint">?attr/colorSurface</item>
         <item name="materialAlertDialogTitleTextStyle">@style/materialDialogTitleStyle</item>
         <item name="materialAlertDialogTitleIconStyle">@style/materialDialogTitleIconStyle</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/materialDialogBodyTextStyle</item>
+    </style>
+
+    <style name="materialDialogBodyTextStyle" parent="MaterialAlertDialog.Material3.Body.Text.CenterStacked">
+
     </style>
 
     <style name="materialDialogTitleStyle" parent="MaterialAlertDialog.Material3.Title.Text.CenterStacked">
