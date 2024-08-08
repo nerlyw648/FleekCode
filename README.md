@@ -19,3 +19,8 @@
 <p align="center">
   The project is currently being developed. The first alpha versions will be released soon. <a href="https://t.me/fleekcode">Telegram Channel</a> | <a href="https://t.me/fleekcode_chat">Telegram Chat</a>
 </p>
+<br>
+<h3>We would like to thank the developers of these libraries:</h3>
+<ul>
+  <li><a href="https://github.com/Rosemoe/sora-editor">Sora-Editor</a></li>
+</ul>
