@@ -6,12 +6,10 @@
 <p align="center">
 Forked of Official CodeAssist Version Alpha-0.2.9
 <p><br>
-
 <div align='center'>
  
 [![stability-alpha](https://img.shields.io/badge/stability-alpha-f4d03f.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#alpha)
 ![Repository Size](https://img.shields.io/github/repo-size/nerlyw648/FleekCode)
-![CI](https://github.com/nerlyw648/FleekCode/actions/workflows/release-apk.yml/badge.svg)
 [![Total downloads](https://img.shields.io/github/downloads/nerlyw648/FleekCode/total)](https://github.com/nerlyw648/FleekCode/releases)
 ![Commit Activity](https://img.shields.io/github/commit-activity/m/nerlyw648/FleekCode)
 <img src="https://img.shields.io/github/v/release/nerlyw648/FleekCode?include_prereleases&amp;label=latest%20release" alt="Latest release">
