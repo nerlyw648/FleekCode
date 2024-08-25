@@ -97,13 +97,14 @@ public class ModuleImpl implements Module {
 
         JSONObject buildSettingsJson = new JSONObject(content);
 
-        if (buildSettingsJson == null) buildSettingsJson = new JSONObject();
 
-        String[] excludedClassPath =
-            buildSettingsJson
-                .optJSONObject("dex")
-                .optString("excludedClassPaths", "9e7ee18a1a5dd5bf070c7e6f706ccc9c")
-                .split(",");
+        String[] excludedClassPath = null;
+        if (buildSettingsJson.optJSONObject("dex") != null) {
+          excludedClassPath = buildSettingsJson
+                  .optJSONObject("dex")
+                  .optString("excludedClassPaths", "9e7ee18a1a5dd5bf070c7e6f706ccc9c")
+                  .split(",");
+        }
         if (excludedClassPath != null) {
           List<String> arrayListName = Arrays.asList(excludedClassPath);
           if (arrayListName != null) {
