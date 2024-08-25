@@ -280,6 +280,7 @@ public class CodeEditorFragment extends Fragment
       mLanguage = new EmptyTextMateLanguage();
     }
     mEditor.setEditorLanguage(mLanguage);
+    mEditor.setScrollBarEnabled(false);
   }
 
   private void configureEditor(@NonNull CodeEditorView editor) {

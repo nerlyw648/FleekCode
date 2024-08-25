@@ -99,7 +99,8 @@ public class ModuleImpl implements Module {
 
 
         String[] excludedClassPath = null;
-        if (buildSettingsJson.optJSONObject("dex") != null) {
+        if (buildSettingsJson != null &&
+                buildSettingsJson.optJSONObject("dex") != null) {
           excludedClassPath = buildSettingsJson
                   .optJSONObject("dex")
                   .optString("excludedClassPaths", "9e7ee18a1a5dd5bf070c7e6f706ccc9c")

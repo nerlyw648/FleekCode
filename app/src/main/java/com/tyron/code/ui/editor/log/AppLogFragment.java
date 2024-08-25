@@ -232,6 +232,8 @@ public class AppLogFragment extends Fragment implements ProjectManager.OnProject
         });
 
     mEditor.setEditable(false);
+    mEditor.setScrollBarEnabled(false);
+
     configureEditor(mEditor);
 
     if (mModel != null) {

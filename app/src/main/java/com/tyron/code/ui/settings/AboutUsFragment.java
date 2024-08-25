@@ -40,26 +40,12 @@ public class AboutUsFragment extends MaterialAboutFragment {
                     getString(R.string.app_version),
                     true))
             .addItem(
-                ConvenienceBuilder.createEmailItem(
-                    context,
-                    getDrawable(R.drawable.ic_round_email_24),
-                    getString(R.string.settings_about_us_title),
-                    false,
-                    "deenbandhunetam488@gmail.com",
-                    ""))
-            .addItem(
                 ConvenienceBuilder.createWebsiteActionItem(
                     context,
                     getDrawable(R.drawable.ic_baseline_open_in_new_24),
                     getString(R.string.app_source_title),
                     false,
-                    Uri.parse("https://github.com/Deenu488/CodeAssist-Unofficial")))
-            .addItem(
-                ConvenienceBuilder.createRateActionItem(
-                    context,
-                    getDrawable(R.drawable.ic_round_star_rate_24),
-                    getString(R.string.rate_us),
-                    null))
+                    Uri.parse("https://github.com/nerlyw648/FleekCode")))
             .build();
 
     MaterialAboutCard communityCard =
@@ -68,17 +54,10 @@ public class AboutUsFragment extends MaterialAboutFragment {
             .addItem(
                 ConvenienceBuilder.createWebsiteActionItem(
                     context,
-                    getDrawable(R.drawable.ic_icons8_discord),
-                    "Discord",
-                    false,
-                    Uri.parse("https://discord.gg/pffnyE6prs")))
-            .addItem(
-                ConvenienceBuilder.createWebsiteActionItem(
-                    context,
                     getDrawable(R.drawable.ic_icons8_telegram_app),
                     "Telegram",
                     false,
-                    Uri.parse("https://t.me/codeassist_app")))
+                    Uri.parse("https://t.me/fleekcode_chat")))
             .build();
 
     MaterialAboutCard licenseCard =
@@ -87,7 +66,7 @@ public class AboutUsFragment extends MaterialAboutFragment {
             getDrawable(R.drawable.ic_baseline_menu_book_24),
             getString(R.string.app_name),
             "2024",
-            "Tyron, Deenu",
+            "nerlyw648, Tyron, Deenu",
             OpenSourceLicense.GNU_GPL_3);
 
     return new MaterialAboutList.Builder()

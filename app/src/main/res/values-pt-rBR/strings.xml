@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">CodeAssist</string>
+
     <string name="hello_world">Olá, mundo!</string>
     <item name="paste" type="string">Colar</item>
     <item name="copy" type="string">Copiar</item>
