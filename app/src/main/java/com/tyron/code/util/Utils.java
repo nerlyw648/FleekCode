@@ -2,7 +2,10 @@ package com.tyron.code.util;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.TypedValue;
+
 
 public class Utils {
     public static int getColorFromAttr(Context context, int attr) {
@@ -11,5 +14,9 @@ public class Utils {
         int color = a.getColor(0, 0);
         a.recycle();
         return color;
+    }
+
+    public static void ui(Runnable runnable) {
+        new Handler(Looper.getMainLooper()).post(runnable);
     }
 }

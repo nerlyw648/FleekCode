@@ -28,6 +28,7 @@ import org.jetbrains.kotlin.com.intellij.openapi.util.KeyWithDefaultValue;
 import org.jetbrains.kotlin.com.intellij.util.ReflectionUtil;
 import org.jetbrains.kotlin.com.intellij.util.concurrency.AtomicFieldUpdater;
 import org.jetbrains.kotlin.com.intellij.util.keyFMap.KeyFMap;
+import org.jetbrains.kotlin.psi.stubs.impl.Utils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -95,6 +96,8 @@ public class ModuleImpl implements Module {
         String content = new String(Files.readAllBytes(Paths.get(buildSettings.getAbsolutePath())));
 
         JSONObject buildSettingsJson = new JSONObject(content);
+
+        if (buildSettingsJson == null) buildSettingsJson = new JSONObject();
 
         String[] excludedClassPath =
             buildSettingsJson
