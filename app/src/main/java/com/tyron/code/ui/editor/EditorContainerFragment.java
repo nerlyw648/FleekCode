@@ -61,7 +61,7 @@ public class EditorContainerFragment extends Fragment
   private TabLayout mTabLayout;
   private ViewPager2 mPager;
   private PageAdapter mAdapter;
-  private BottomSheetBehavior<View> mBehavior;
+  //private BottomSheetBehavior<View> mBehavior;
 
   private MainViewModel mMainViewModel;
 
@@ -72,7 +72,7 @@ public class EditorContainerFragment extends Fragment
       new OnBackPressedCallback(false) {
         @Override
         public void handleOnBackPressed() {
-          mBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+          //mBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
         }
       };
 
@@ -89,7 +89,7 @@ public class EditorContainerFragment extends Fragment
   public void onSaveInstanceState(@NonNull Bundle outState) {
     super.onSaveInstanceState(outState);
 
-    outState.putInt("bottom_sheet_state", mBehavior.getState());
+    //outState.putInt("bottom_sheet_state", mBehavior.getState());
   }
 
   @Nullable
@@ -164,28 +164,28 @@ public class EditorContainerFragment extends Fragment
         });
     new TabLayoutMediator(mTabLayout, mPager, true, true, this::updateTab).attach();
 
-    View persistentSheet = root.findViewById(R.id.persistent_sheet);
-    mBehavior = BottomSheetBehavior.from(persistentSheet);
-    mBehavior.setGestureInsetBottomIgnored(true);
+    //View persistentSheet = root.findViewById(R.id.persistent_sheet);
+    //mBehavior = BottomSheetBehavior.from(persistentSheet);
+    //mBehavior.setGestureInsetBottomIgnored(true);
 
-    mBehavior.addBottomSheetCallback(
-        new BottomSheetBehavior.BottomSheetCallback() {
-          @Override
-          public void onStateChanged(@NonNull View p1, int state) {
-            mMainViewModel.setBottomSheetState(state);
-          }
-
-          @Override
-          public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-            if (isAdded()) {
-              Bundle bundle = new Bundle();
-              bundle.putFloat("offset", slideOffset);
-              getChildFragmentManager().setFragmentResult(BottomEditorFragment.OFFSET_KEY, bundle);
-            }
-          }
-        });
-    mBehavior.setHalfExpandedRatio(0.3f);
-    mBehavior.setFitToContents(false);
+//    mBehavior.addBottomSheetCallback(
+//        new BottomSheetBehavior.BottomSheetCallback() {
+//          @Override
+//          public void onStateChanged(@NonNull View p1, int state) {
+//            mMainViewModel.setBottomSheetState(state);
+//          }
+//
+//          @Override
+//          public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+//            if (isAdded()) {
+//              Bundle bundle = new Bundle();
+//              bundle.putFloat("offset", slideOffset);
+//              getChildFragmentManager().setFragmentResult(BottomEditorFragment.OFFSET_KEY, bundle);
+//            }
+//          }
+//        });
+    //mBehavior.setHalfExpandedRatio(0.3f);
+    //mBehavior.setFitToContents(false);
 
     ProjectManager.getInstance().addOnProjectOpenListener(this);
 
@@ -266,9 +266,9 @@ public class EditorContainerFragment extends Fragment
               if (tab != null) {
                 updateTab(tab, pos);
               }
-              if (mBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
-                mMainViewModel.setBottomSheetState(BottomSheetBehavior.STATE_COLLAPSED);
-              }
+//              if (mBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
+//                mMainViewModel.setBottomSheetState(BottomSheetBehavior.STATE_COLLAPSED);
+//              }
             });
     mMainViewModel
         .getBottomSheetState()
